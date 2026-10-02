@@ -503,7 +503,7 @@ ul li::before{content:"·";color:var(--gold);margin-right:10px}
     try{
       const SID=(crypto.randomUUID?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(16).slice(2)));
       let activeMs=0, lastTick=(document.visibilityState==='visible'?Date.now():null), lastSent=-1;
-      function tick(){if(lastTick!==null){activeMs+=Date.now()-lastTick;lastTick=Date.now();}}
+      function tick(){if(lastTick!==null){activeMs+=Math.min(Date.now()-lastTick,60000);lastTick=Date.now();}}
       document.addEventListener('visibilitychange',()=>{tick();lastTick=document.visibilityState==='visible'?Date.now():null;if(document.visibilityState==='hidden')send(true);});
       function send(keepalive){
         tick();
