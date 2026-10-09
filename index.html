@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#15100C" />
 <link rel="icon" href="media/logo-symbol.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1E1711; --bg:#15100C; --cream:#F4EEE4; --cream2:#EBE2D3; --gold:#B8893B; --gold2:#D9B26B; --mute:#7A6A57; --line:#DCD2C2;
@@ -81,6 +81,13 @@ ul li::before{content:"·";color:var(--gold);margin-right:10px}
 .tl .d{align-self:start}
 .hint{color:rgba(244,238,228,.35);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 .draft{position:fixed;top:12px;right:14px;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(217,178,107,.5);padding:6px 10px;border-radius:999px}
+/* cover: match main deck (info.coherenceatx.com) proportions */
+.slide.cover .coverlogo{position:absolute;top:26px;left:64px;height:44px;z-index:3;opacity:.95}
+.slide.cover h1{font-family:"Work Sans","Helvetica Neue",Arial,sans-serif;font-weight:500;letter-spacing:.12em;font-size:96px;line-height:1}
+.slide.cover .kicker{font-size:13px;letter-spacing:.32em;margin-bottom:12px}
+.slide.cover p{font-size:19px;line-height:1.6;max-width:60ch;color:#F7F1E7;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.slide.cover .kicker.sub{font-size:11.5px;margin-top:18px}
+@media (max-width:900px){.slide.cover h1{font-size:48px;letter-spacing:.12em}.slide.cover p{font-size:15px}}
 @media (max-width:900px){.slide{padding:32px 28px}.brand,.foot{left:28px;right:28px}h1{font-size:40px;letter-spacing:.14em}h2{font-size:24px}.cols{grid-template-columns:1fr;gap:18px}.img{min-height:120px}.c3,.c4,.c5{grid-template-columns:1fr 1fr}.big{font-size:80px}.card .n{font-size:22px}p{font-size:13px}}
 .hint{margin-bottom:6px}
 .credit{position:absolute;right:64px;bottom:44px;z-index:3;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,241,231,.55)}
@@ -110,12 +117,13 @@ ul li::before{content:"·";color:var(--gold);margin-right:10px}
 <div class="deck" id="deck">
 
 <!-- 01 Cover -->
-<section class="slide photo active" style="--o1:.6;--o2:.88;--ph:url(media/cover-crowd.jpg)">
+<section class="slide photo cover active" style="--o1:.6;--o2:.88;--ph:url(media/cover-crowd.jpg)">
+  <img class="coverlogo" src="media/logo-symbol.png" alt="Coherence" />
   <div class="center" style="align-items:center;text-align:center">
     <div class="kicker" style="color:var(--gold2)">March 19 to 22, 2027 · Carson Creek Ranch · Austin, Texas</div>
     <h1>Coherence</h1>
     <p style="margin:18px auto 6px;max-width:56ch;text-align:center">A four-day festival for optimists. Music, ceremony and collective action on the Colorado River, fifteen minutes from downtown Austin.</p>
-    <div class="kicker" style="margin-top:14px;color:rgba(247,241,231,.7)">Partnership deck · An IMXP × Unify production</div>
+    <div class="kicker sub" style="color:rgba(247,241,231,.7)">Partnership deck · An IMXP × Unify production</div>
   </div>
   <div class="foot"><span>coherencefestival.com</span></div>
 </section>
